@@ -1,12 +1,12 @@
-pipeline{
-  agent{label 'Jenkins-Master'}
-  tools{
+pipeline {
+  agent { label 'Jenkins-Master' }
+  tools {
     jdk 'JAVA21'
     maven 'Maven3'
   }
-  stages{
-    stage("Cleanup Workspace") {
-      steps{
+  stages {
+    stage('Cleanup Workspace') {
+      steps {
         cleanWs()
       }
     }
@@ -17,13 +17,13 @@ pipeline{
     }
     stage('Build Application') {
       steps {
-          sh "mvn clean package"
-        }
-      }  
-    stage('Test Application') {
-      steps {
-          sh 'mvn test' 
-        }
+        sh "mvn clean package"
       }
     }
-  } 
+    stage('Test Application') {
+      steps {
+        sh 'mvn test'
+      }
+    }
+  }
+}
