@@ -17,14 +17,12 @@ pipeline{
     }
     stage('Build Application') {
       steps {
-        dir("${WORKSPACE}") {  // Explicitly set working directory
           sh "mvn clean package"
         }
       }    
     }
     stage('Test Application') {
       steps {
-        dir("${WORKSPACE}") {
           sh 'mvn test' 
         }
       }
