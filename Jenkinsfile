@@ -36,9 +36,9 @@ pipeline {
     stage('Quality Gate') {
       steps {
         // Wait for SonarQube to process the analysis
-       script {
+          script {
           // This will poll SonarQube and wait for quality gate status
-          waitForQualityGate abortPipeline: false, credentialsId:'jenkins-sonarqube-token'
+              waitForQualityGate abortPipeline: false, credentialsId:'jenkins-sonarqube-token'
         }
       }
     }
