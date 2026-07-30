@@ -33,6 +33,15 @@ pipeline {
         }
       }
     }
+    stage('Quality Gate') {
+      steps {
+        // Wait for SonarQube to process the analysis
+        timeout(time: 5, unit: 'MINUTES') {
+          // This will poll SonarQube and wait for quality gate status
+          waitForQualityGate abortPipeline: true
+        }
+      }
+    }
   
   }
 }
