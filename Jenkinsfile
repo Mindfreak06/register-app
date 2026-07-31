@@ -19,7 +19,8 @@ pipeline {
 
     stage('Checkout from SCM') {
       steps {
-        git branch: 'main', credentialsId: 'github', url: 'https://github.com'
+        git branch: 'main', credentialsId: 'github', url: 'https://github.com/Mindfreak06/register-app'
+
       }
     }
 
