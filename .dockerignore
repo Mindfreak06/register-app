@@ -1,0 +1,8 @@
+# .dockerignore
+# Keep build context small but include built JAR(s)
+.git
+.gitignore
+target/
+!target/*.jar
+node_modules
+*.md
